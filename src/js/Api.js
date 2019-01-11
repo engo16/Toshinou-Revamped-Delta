@@ -461,6 +461,16 @@ class Api {
 			}
 		}
 	}
+	
+	ggKuiperFix() {
+		this.resetTargetWhenHpBelow25Percent = false;
+		window.settings.setNpc("-=[ Streuner Specialist ]=- ϛ18", "9");
+		window.settings.setNpc("-=[ Streuner Specialist ]=- ϛ25", "9");
+		window.settings.setNpc("-=[ Streuner Specialist ]=- ϛ31", "9");
+		window.settings.setNpc("-=[ Streuner Specialist ]=- ϛ34", "9");
+		window.settings.setNpc("-=[ Streuner Specialist ]=- ϛ36", "9");
+	}
+	
 
 	countNpcAroundByName(name, distance){
 		let shipsCount = Object.keys(this.ships).length;

@@ -183,7 +183,11 @@ class StarSystem {
 		this.starSystem.push(new Map(74, "GG κ", noPortals));
 		this.starSystem.push(new Map(200, "LOW", noPortals));
 		this.starSystem.push(new Map(203, "GG Hades", noPortals));
-		this.starSystem.push(new Map(300, "GG Kuiper", noPortals));
+		this.starSystem.push(new Map(300, "GG Kuiper 1", noPortals));
+		this.starSystem.push(new Map(301, "GG Kuiper 2", noPortals));
+		this.starSystem.push(new Map(302, "GG Kuiper 3", noPortals));
+		this.starSystem.push(new Map(303, "GG Kuiper 4", noPortals));
+		this.starSystem.push(new Map(304, "GG Kuiper 5", noPortals));
 	}
 	
 	completeRute(imcompleteRute){

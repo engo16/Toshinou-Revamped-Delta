@@ -427,13 +427,17 @@ function logic() {
 		window.settings.moveRandomly = true;
 		window.settings.killNpcs = true;
 		window.settings.circleNpc = true;
-		api.resetTargetWhenHpBelow25Percent = true;
 		window.settings.dontCircleWhenHpBelow25Percent = false;
+		api.resetTargetWhenHpBelow25Percent = true;
+		
 		if (window.hero.mapId == 73) {
 			api.ggZetaFix();
 		} else if (window.hero.mapId == 55) {
 			api.ggDeltaFix();
+		} else if (window.hero.mapId == 300 || window.hero.mapId == 301 ||  window.hero.mapId == 303 || window.hero.mapId == 303 || window.hero.mapId == 304) {
+			api.ggKuiperFix();
 		}
+		
 		if (api.targetBoxHash == null) {
 			api.jumpInGateByType(2, window.globalSettings.alpha);
 			api.jumpInGateByType(3, window.globalSettings.beta);
