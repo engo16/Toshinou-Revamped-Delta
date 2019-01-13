@@ -409,5 +409,14 @@
   },
   "attackEnemyPlayers": {
     "message": "Attacca nemici"
+  },
+  "petReviveLimit": {
+    "message": "Limite rianimazioni pet (0 = Non rianimare)"
+  },
+   "attackBattleray": {
+    "message": "Attacca la Battleray"
+  },
+   "onlyAnswerAttacks": {
+    "message": "Rispondi solo agli attacchi"
   }
 }
