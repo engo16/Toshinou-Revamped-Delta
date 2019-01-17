@@ -6,37 +6,42 @@ class AttackHandler {
 	constructor() {
 		this._handler = function (e, a) {
 			var shipAttackCmd = JSON.parse(e.detail);
-			let attackerID = shipAttackCmd[Variables.attackerId];
-			let shipAttackedID = shipAttackCmd[Variables.attackedId];
 			try {
-				if (window.settings.sentinelMode && a.sentinelship != null) {
-					if (attackerID == window.globalSettings.sentinelid) {
-						a.sentinelship.targetId = shipAttackedID;
-					}     
-					if (shipAttackedID == window.globalSettings.sentinelid) {
-						a.sentinelship.attackerID = attackerID;
-					}
+				let attackerId = shipAttackCmd[Variables.attackerId];
+				let attackedShipId = shipAttackCmd[Variables.heroAttackedId];
+				let ship = a.ships[attackedShipId];
+
+				if (attackerId == window.hero.id) {
+					window.attackWindow.id(attackedShipId);
+					window.attackWindow.hp(shipAttackCmd[Variables.attackHp]);
+					window.attackWindow.shd(shipAttackCmd[Variables.attackShd]);
+					window.attackWindow.targetName(ship.name);
 				}
-				let ship = a.ships[attackerID];
-				if (ship != null){
-					if ((window.globalSettings.avoidAttackedNpcs && ship.isNpc) && (attackerID != window.hero.id) && !window.settings.ggbot && (shipAttackedID != window.hero.id)) {
-						if (a.pet != null && attackerID != a.pet.id) {
-							a.blackListId(shipAttackedID);
-						}
-					}
-					if (a.pet != null && shipAttackedID == a.pet.id){
-						console.log(ship.name + " is attacking your pet.");
-					}
-					if (shipAttackedID == window.hero.id) {
-						a.ships[attackerID].attacksUs = true;
-					} else {
-						a.ships[attackerID].attacksUs = false;	
-					}
+
+				if (attackedShipId == window.hero.id) {
+					window.hero.hp = shipAttackCmd[Variables.attackHp];
+					window.hero.shd = shipAttackCmd[Variables.attackShd];
+				}
+
+				if (api.targetShip && attackedShipId == api.targetShip.id) {
+					api.lastAttack = $.now();
 				}
 				
+				let npcshd = shipAttackCmd[Variables.selectMaxShd];
+				if (ship) {
+					ship.hp = shipAttackCmd[Variables.attackHp];
+					ship.shd = shipAttackCmd[Variables.attackShd];
+					ship.targetID = attackerId;
+
+					if (attackerId != window.hero.id) {
+						ship.isAttacked = true;
+					} else {
+						ship.isAttacked = false;
+					}
+				}
 			} catch (exception) {
 				console.log(exception.message);
-				console.log(shipAttackCmd);  
+				console.log(shipAttackCmd);
 			};
 		}
 	}
