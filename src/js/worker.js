@@ -480,10 +480,10 @@ function logic() {
 		if (enemyResult.run && (!window.globalSettings.onlyEscapeWhenEnemyAttack || (window.globalSettings.onlyEscapeWhenEnemyAttack && enemyResult.enemy.attacksUs))) {
 			if (window.globalSettings.useHability) {
 				if (enemyResult.enemy.attacksUs) {
-					if (window.hero.skillname == "mimesis") {
+					if (window.hero.skillName == "mimesis") {
 						api.useHabilityTwo();
 					}
-					if (window.hero.skillName == "spectrum" || window.hero.skillName == "v-lightning" || window.hero.skillname == "mimesis") {
+					if (window.hero.skillName == "spectrum" || window.hero.skillName == "v-lightning" || window.hero.skillName == "mimesis") {
 						api.useHability();
 					} else if (window.hero.skillName == "citadel") {
 						api.useHabilityTwo();

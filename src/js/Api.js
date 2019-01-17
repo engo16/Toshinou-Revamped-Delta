@@ -1181,14 +1181,14 @@ class Api {
 	}
 	
 	attackSkills() {
-		if ((window.hero.skillname == "cyborg" && this.targetShip.hp > window.globalSettings.cyborgHp)||
+		if ((window.hero.skillName == "cyborg" && this.targetShip.hp > window.globalSettings.cyborgHp)||
 				(window.hero.skillName == "venom" && this.targetShip.hp > window.globalSettings.venomHp)) { 
 			this.useHability();
 		} else if (window.hero.skillName == "diminisher" && this.targetShip.shd > window.globalSettings.diminisherSHD){
 			this.useHability();
-		} else if (window.hero.skillname == "sentinel" || window.hero.skillname == "tartarus"){
+		} else if (window.hero.skillName == "sentinel" || window.hero.skillName == "tartarus"){
 			this.useHability();
-		} else if (window.hero.skillname == "spearhead") {
+		} else if (window.hero.skillName == "spearhead") {
 			this.useHabilityThree();   
 		}
 	}
