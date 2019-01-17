@@ -1,6 +1,6 @@
 class HeroDiedHandler {
 	static get ID() {
-		return 12034;
+		return 18895;
 	}
 
 	constructor() {
