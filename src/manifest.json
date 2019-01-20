@@ -85,7 +85,7 @@
 		"js/handlers/commands/HeroAffectedHandler.js",
 		"js/handlers/commands/GroupCreateHandler.js",
 		"js/handlers/commands/GroupShipUpdatePosHandler.js",
-		"js/handlers/commands/AttackHandler.js",
+		"js/handlers/commands/HeroAttackHandler.js",
 		"js/handlers/commands/HeroPetUpdateHandler.js",
 		"js/handlers/commands/PetUpdateFuel.js",
 		"js/handlers/commands/HeroJumpedHandler.js",

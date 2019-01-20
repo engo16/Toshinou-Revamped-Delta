@@ -1,6 +1,6 @@
-class AttackHandler {
+class HeroAttackHandler {
 	static get ID() {
-		return 28006;
+		return 18891;
 	}
 
 	constructor() {
