@@ -1,113 +1,109 @@
 class Variables {
 	static get assetCreateX() {
-		return "_-Ye";
+		return "_-32w";
 	}
 	
 	static get assetCreateY() {
-		return "_-45e";
+		return "_-H3t";
 	}
 	
 	static get boxType() {
-		return "_-s1X";
+		return "_-86";
 	}
 	
 	static get gateId() {
-		return "_-K2c";
+		return "_-K2V";
 	}
 	
 	static get gateType() {
-		return "_-S17";
+		return "_-b3l";
 	}
 	
 	static get attackerId() {
-		return "_-Q2X";
+		return "_-g5";
 	}
 	
 	static get heroAttackedId() {
-		return "_-N38";
+		return "_-g4j";
 	}
 	
 	static get attackHp() {
-		return "_-nq";
+		return "_-v48";
 	}
 	
 	static get attackShd() {
-		return "_-W4I";
+		return "_-z47";
 	}
 	
 	static get heroInitMaxHp() {
-		return "_-H49";
+		return "_-85y";
 	}
 	
 	static get heroInitMaxShd() {
-		return "_-d21";
+		return "_-E3k";
 	}
 	
 	static get heroInitHp() {
-		return "_-N2v";
+		return "_-X3m";
 	}
 	
 	static get heroPetId() {
-		return "_-f4u";
+		return "_-r2p";
 	}
 	
 	static get hpUpdateMaxHp() {
-		return "_-F4d";
+		return "_-W3m";
 	}
 	
 	static get hpUpdateHp() {
-		return "_-h1w";
-	}
-	
-	static get heroUpdateShd() {
-		return "_-J4n";
+		return "_-V2H";
 	}
 	
 	static get resource() {
-		return "_-M4T";
+		return "_-B2a";
 	}
 	
 	static get attackerId() {
-		return "_-Q2X";
+		return "_-g5";
 	}
 	
 	static get attackedId() {
-		return "_-g2J";
+		return "_-X2S";
 	}
 	
 	static get clanDiplomacy() {
-		return "_-Y4B";
+		return "_-d4V";
 	}
 	
 	static get shipDestroyedId() {
-		return "_-71";
+		return "_-G2";
 	}
 	
 	static get moveDuration() {
-		return "_-h1z";
+		return "_-05L";
 	}
 	
 	static get selectMaxHp() {
-		return "_-F4d";
+		return "_-W3m";
 	}
 	
 	static get selectMaxShd() {
-		return "_-d21";
+		return "_-E3k";
 	}
 	
 	static get selectHp() {
-		return "_-h1w";
+		return "_-V2H";
 	}	
 	
 	static get resourceType() {
-		return "_-hw";
+		return "_-p1M";
 	}
 
 	static get battlestationClanDiplomacy() {
-		return "_-N41"; 
+		return "_-j3l"; 
 	}
 	
 	static get groupShipID(){
-		return "_-Cd";//up
+		return "_-Cd";
 	}
 }
