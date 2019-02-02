@@ -619,7 +619,7 @@ class Api {
 		let finalGate;
 		this.gates.forEach(gate => {
 			if (gate.gateId != 150000409 && gate.gateId != 150000410 && gate.gateId != 150000411 && (gate.gateType == 1 || gate.gateType == 51 || gate.gateType == 52)) {
-				let pvpgates = [150000299, 150000319,150000330, 150000191, 150000192, 150000193];
+				let pvpgates = [150000299, 150000319,150000330, 150000191, 150000192, 150000193, 150000209, 150000205, 150000201];
 				if(!(window.globalSettings.jumpFromEnemy && pvpgates.indexOf(gate.gateId) != -1)){
 					let enemyDistance = enemy.distanceTo(gate.position);
 					let dist = window.hero.distanceTo(gate.position);
@@ -757,10 +757,13 @@ class Api {
 
 	attackMode() {
 		if (window.globalSettings.autoChangeConfig && window.globalSettings.attackConfig != window.hero.shipconfig) {
-			this.changeConfig();
+			if (this.changeConfig()){
+				return true;
+			}
 		}
 		if (window.globalSettings.changeFormation && window.globalSettings.attackFormation != this.formation) {
 			if (this.changeFormation(window.globalSettings.attackFormation)) {
+				return true;
 			}
 			
 		}
@@ -769,11 +772,14 @@ class Api {
 	speedMode() {
 		if (window.globalSettings.autoChangeConfig) {
 			if(window.globalSettings.flyingConfig != window.hero.shipconfig) {
-				this.changeConfig();
+				if (this.changeConfig()){
+					return true;
+				}
 			}
 		}
 		if (window.globalSettings.changeFormation && this.formation != window.globalSettings.flyingFormation) {
 			if (this.changeFormation(window.globalSettings.flyingFormation)) {
+				return true;
 			}
 		}
 	}
@@ -781,11 +787,14 @@ class Api {
 	escapeMode() {
 		if (window.globalSettings.autoChangeConfig) {
 			if (window.globalSettings.escapeConfig != window.hero.shipconfig) {
-				this.changeConfig();
+				if (this.changeConfig()){
+					return true;
+				}
 			}
 		}
 		if (window.globalSettings.changeFormation && this.formation != window.globalSettings.escapeFormation) {
 			if (this.changeFormation(window.globalSettings.escapeFormation)) {
+				return true;
 			}
 		}
 	}

@@ -414,7 +414,9 @@ function logic() {
 		return;
 	} else if (api.isRepairing && window.hero.hp === window.hero.maxHp) {
 		api.isRepairing = false;
-		api.attackMode();
+		if (api.attackMode()) {
+			return;
+		}
 	}
 
 	if ($.now() - api.resetBlackListTime > api.blackListTimeOut) {
@@ -511,7 +513,9 @@ function logic() {
 				}
 			}
 			if (window.globalSettings.jumpFromEnemy && !window.hasJumped & !window.settings.palladium) {
-				api.escapeMode();
+				if (api.escapeMode()) {
+					return;
+				}
 				let gate = api.findNearestGate();
 				if (gate.gate) {
 					let x = gate.gate.position.x + MathUtils.random(-100, 100);
@@ -539,7 +543,9 @@ function logic() {
 					return;
 				}
 			} else if (!window.settings.palladium) {
-				api.escapeMode();
+				if (api.escapeMode()) {
+					return;
+				}
 				let gate = api.findNearestGateForRunAway(enemyResult.enemy);
 				if (gate.gate) {
 					let x = gate.gate.position.x + MathUtils.random(-100, 100);
@@ -597,7 +603,9 @@ function logic() {
 						let x = api.battlestation.position.x + MathUtils.random(-100, 100);
 						let y = api.battlestation.position.y + MathUtils.random(-100, 100);
 						api.moveWithFilter(x, y);
-						api.escapeMode();
+						if (api.escapeMode()) {
+							return;
+						}
 						api.isRepairing = true;
 						return;
 					}
@@ -615,7 +623,9 @@ function logic() {
 					let x = gate.gate.position.x + MathUtils.random(-100, 100);
 					let y = gate.gate.position.y + MathUtils.random(-100, 100);
 					api.moveWithFilter(x, y);
-					api.escapeMode();
+					if (api.escapeMode()) {
+						return;
+					}
 					api.isRepairing = true;
 					return;
 				}
@@ -629,7 +639,9 @@ function logic() {
 	}
 
 	if (!window.settings.ggbot && window.globalSettings.workmap != 0 && window.hero.mapId != window.globalSettings.workmap && !window.settings.sentinelMode) {
-		api.speedMode();
+		if (api.speedMode()) {
+			return;
+		}
 		api.goToMap(window.globalSettings.workmap);
 		return;
 	} else {
@@ -768,15 +780,21 @@ function logic() {
 		x = MathUtils.random(600, 4600);
 		y = MathUtils.random(1500, 11500);  
 	} else if (!window.bigMap && !window.settings.palladium && api.targetBoxHash == null && api.targetShip == null && window.movementDone && window.settings.moveRandomly) {
-		api.speedMode();
+		if (api.speedMode()) {
+			return;
+		}
 		x = MathUtils.random(200, 20800);
 		y = MathUtils.random(200, 12900);
 	} else if (window.bigMap && !window.settings.palladium && api.targetBoxHash == null && api.targetShip == null && window.movementDone && window.settings.moveRandomly) {
-		api.speedMode();
+		if (api.speedMode()) {
+			return;
+		}
 		x = MathUtils.random(500, 41500);
 		y = MathUtils.random(500, 25700);
 	} else if (window.settings.palladium && api.targetBoxHash == null && api.targetShip == null && window.movementDone && window.settings.moveRandomly) {
-		api.speedMode();
+		if (api.speedMode()) {
+			return;
+		}
 		x = MathUtils.random(13000, 30400);
 		y = MathUtils.random(19000, 25500);
 	}
@@ -793,7 +811,9 @@ function logic() {
 			radius = window.settings.npcCircleRadius;
 		}
 		if(api.attacking){
-			api.attackMode();
+			if (api.attackMode()) {
+				return;
+			}
 			if(window.globalSettings.useHability && dist < 1000){
 				api.attackSkills();
 			}
@@ -910,7 +930,9 @@ function sentinelLogic() {
 	if (shipAround) {
 		api.rute = null;
 		if (shipAround.distanceTo(window.hero.position) > window.globalSettings.followRange && !api.targetShip) {
-			api.speedMode();
+			if (api.speedMode()) {
+				return;
+			}
 			x = shipAround.position.x + MathUtils.random(-100, 100);
 			y = shipAround.position.y + MathUtils.random(-100, 100);
 			api.moveWithFilter(x, y);
@@ -926,7 +948,9 @@ function sentinelLogic() {
 			}
 			return;
 		} else {
-			api.speedMode();
+			if (api.speedMode()) {
+				return;
+			}
 			api.goToMap(api.sentinelship.mapId);
 			return;
 		}
@@ -997,7 +1021,9 @@ function sentinelLogic() {
 			radius = window.settings.npcCircleRadius;
 		}
 		if(api.attacking){
-			api.attackMode();
+			if (api.attackMode()) {
+				return;
+			}
 			if(window.globalSettings.useHability && dist < 1000){
 				api.attackSkills();
 			}
