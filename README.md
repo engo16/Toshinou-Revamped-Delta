@@ -1,3 +1,5 @@
+Closed project - Other toshinou projects are still alive
+==========
 Toshinou Revamped Delta
 ==========
 [![GitHub release](https://img.shields.io/github/release/dm94/Toshinou-Revamped-Delta.svg)](https://github.com/dm94/Toshinou-Revamped-Delta/releases)
