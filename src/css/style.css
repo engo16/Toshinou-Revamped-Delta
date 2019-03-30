@@ -1,31 +1,31 @@
-*{
+* {
     box-sizing: border-box;
 }
 
-.main-frame{
+.main-frame {
     position: absolute;
     left: 400px;
     top: 50px;
 }
 
-.minimized{
+.minimized {
     display: none;
 }
 
-.movable{
+.movable {
     position: absolute;
 }
 
-.window{
+.window {
     color: #e8e1bf;
     width: 300px;
     background-color: transparent;
     border: 1px solid rgb(40, 116, 144);
 }
 
-.window .header, .main-frame .header, .tab .header{
+.window .header, .main-frame .header, .tab .header {
     width: 100%;
-    height: 50px;
+    height: 40px;
     background-color: rgb(22, 38, 47);
     top: 0px; left: 0px;
     box-sizing: border-box;
@@ -35,11 +35,11 @@
     border-bottom: 1px solid rgb(40, 116, 144);
 }
 
-.movable>.header{
+.movable>.header {
     cursor: move;
 }
 
-.window .minimize-btn, .main-frame .minimize-btn{
+.window .minimize-btn, .main-frame .minimize-btn {
     padding: 10px;
     margin: 0px;
     cursor: pointer;
@@ -49,41 +49,44 @@
     height: 100%;
 }
 
-.window .content, .main-frame .content, .tab .content{
+.window .content, .main-frame .content, .tab .content {
     width: 100%;
     background-color: rgba(22, 38, 47, 0.78);
     overflow-y: auto;
     padding: 5px;
 }
 
+
 .tabs .headers{
     display: flex;
+
 }
 
-.tabs .header{
+.tabs .header {
     cursor: pointer;
     border-right: 1px solid;
     max-width: 80px;
+
 }
 
-.tabs .header:last-child{
+.tabs .header:last-child {
     border-right: none;
 }
 
 
-.window .content canvas{
+.window .content canvas {
     max-width: 100%;
 }
 
-.tabs .content{
+.tabs .content {
     display: none;
 }
 
-.tabs .content.active{
+.tabs .content.active {
     display: block;
 }
 
-.btn{
+.btn {
     display: inline-block;
     padding: 5px 10px;
     color: #e8e1bf;
@@ -91,6 +94,6 @@
     border: 1px solid rgb(40, 116, 144);
 }
 
-.btn:hover{
+.btn:hover {
     background-color: rgb(40, 116, 144);
 }
